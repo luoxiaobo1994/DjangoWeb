@@ -73,10 +73,21 @@ WSGI_APPLICATION = 'website01.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
+# DATABASES = {    # 这部分是默认的,但是我们不使用
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+DATABASES = {  # 使用这部分新的.
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_test01',
+        'USER': 'root',  # 数据库名称
+        'PASSWORD': 'Lxb@12345',  # 数据库密码
+        'HOST': '127.0.0.1',  # 安装在本机就怎么填.或者localhost
+        'PORT': 3306  # 这里就是数值,不是字符串
     }
 }
 
@@ -118,4 +129,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

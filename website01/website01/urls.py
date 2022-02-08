@@ -19,9 +19,13 @@ from app01 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index',views.index),
-    path('user/list',views.user_list),
-    path('user/add',views.user_add),
-    path('something',views.something),
+    path('index/',views.index),
+    path('user/list/',views.user_list),
+    path('user/add/',views.user_add),
+    path('something/',views.something),
     path('login/',views.login),
+    path('orm/',views.orm),
+    # 案例:用户管理
+    path('info/list/',views.info_list),
+    path('info/add/',views.info_add),
 ]
